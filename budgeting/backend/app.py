@@ -275,7 +275,6 @@ def get_carryover():
     # and return it as {"carryover": <value>}. Return 0 if no budget exists.
     pass
 
-
 if __name__ == "__main__":
     from seed import seed
     if not os.path.exists(DB_PATH):
