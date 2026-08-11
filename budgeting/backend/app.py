@@ -202,7 +202,7 @@ def customer():
     user_id = session.get("user_id")
     if not user_id:
         return jsonify({"error": "Not logged in"}), 401
-
+    user_info = find_user_by_id(user_id)
     # TODO: fetch the user using find_user_by_id and return their name and email
     pass
 
@@ -280,4 +280,4 @@ if __name__ == "__main__":
     from seed import seed
     if not os.path.exists(DB_PATH):
         seed()
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5001)

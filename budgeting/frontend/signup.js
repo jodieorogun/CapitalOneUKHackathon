@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000";
+const API_BASE = "http://localhost:5001";
 
 async function doSignup() {
   // TODO: Read name, email, username and password from the form inputs
