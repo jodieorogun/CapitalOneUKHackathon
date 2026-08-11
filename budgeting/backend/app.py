@@ -202,7 +202,7 @@ def customer():
     user_id = session.get("user_id")
     if not user_id:
         return jsonify({"error": "Not logged in"}), 401
-
+    user_info = find_user_by_id(user_id)
     # TODO: fetch the user using find_user_by_id and return their name and email
     pass
 
@@ -274,7 +274,6 @@ def get_carryover():
     # TODO: get the latest budget for this user, calculate remaining_actual
     # and return it as {"carryover": <value>}. Return 0 if no budget exists.
     pass
-
 
 if __name__ == "__main__":
     from seed import seed
