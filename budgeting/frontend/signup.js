@@ -22,7 +22,7 @@ async function doSignup() {
     return;
   }
   try {
-    const res  = await fetch(`${API_BASE}/login`, {
+    const res  = await fetch(`${API_BASE}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

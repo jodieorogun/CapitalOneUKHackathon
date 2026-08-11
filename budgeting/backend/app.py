@@ -135,10 +135,11 @@ def delete_budget(budget_id):
     pass
 
 def register_user(username, password, name, email):
-    all_users = _read_csv("user.csv")
-    next_id = next_id(all_users) if all_users else 1
-    rows = all_users.append({"id": next_id, "username": username, "password": password, "name": name, "email": email})
-    _write_csv("users.csv", rows, [username, password, name, email] )
+    all_users = _read_csv("users.csv")
+    next_id = _next_id(all_users) if all_users else 1
+    all_users.append({"id": next_id, "username": username, "password": password, "name": name, "email": email})
+    next_id+=1
+    _write_csv("users.csv", all_users, ["id", "username", "password", "name", "email"] )
     # TODO: check username not already taken, append new user to users.csv, return True/False
     pass
 
