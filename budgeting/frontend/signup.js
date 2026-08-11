@@ -2,9 +2,9 @@ const API_BASE = "http://localhost:5001";
 
 async function doSignup() {
     const username = document.getElementById("username").value.trim();
-    const password =document.getElementById("username").value.trim();
-    const name =document.getElementById("username").value.trim();
-    const email =document.getElementById("username").value.trim();
+    const password =document.getElementById("password").value.trim();
+    const name =document.getElementById("name").value.trim();
+    const email =document.getElementById("email").value.trim();
   if (!username ) {
     showError("Please enter your username");
     return;

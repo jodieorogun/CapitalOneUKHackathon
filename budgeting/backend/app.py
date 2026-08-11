@@ -135,6 +135,10 @@ def delete_budget(budget_id):
     pass
 
 def register_user(username, password, name, email):
+    all_users = _read_csv("user.csv")
+    next_id = next_id(all_users) if all_users else 1
+    rows = all_users.append({"id": next_id, "username": username, "password": password, "name": name, "email": email})
+    _write_csv("users.csv", rows, [username, password, name, email] )
     # TODO: check username not already taken, append new user to users.csv, return True/False
     pass
 
@@ -193,7 +197,7 @@ def register():
 
     if not register_user(username, password, name, email):
         return jsonify({"error": "Username already taken"}), 400
-
+    register_user(username, password, name, email)
     return jsonify({"message": "Account created successfully"}), 201
 
 
